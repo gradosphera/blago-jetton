@@ -3,5 +3,5 @@
    "description": "Jetton with Governance",
    "symbol": "Blago",
    "decimals": 9,
-   "mage": "https://raw.githubusercontent.com/gradosphera/blago-jetton/main/blago.png"
+   "image": "https://raw.githubusercontent.com/gradosphera/blago-jetton/main/blago.png"
 }
