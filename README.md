@@ -1,5 +1,39 @@
 # Жетон Благо
 
+## Архитектура ДАО
+Базовая реализация на примере проекта Чистая Лига
+```mermaid
+sequenceDiagram
+  actor Volunteer as Волонтер
+  participant DAOPlatform as ДАО Градосфера
+  participant subDAOPlatform as ДАО Чистая Лига
+  participant SmartContract as Мастер контракт
+  participant TokenSystem as Жетон Благо
+  participant MultiAccount as Мультикошелек
+  participant Partner as Партнер Градосферы
+
+  Volunteer ->> subDAOPlatform: Подает заявку на участие в проекте Чистая Лига
+  subDAOPlatform ->> SmartContract: Регистрирует волонтеров и следите за их временем работы
+  SmartContract -->> subDAOPlatform: Подтверждение регистрации
+  subDAOPlatform -->> Volunteer: Регистрация подтверждена
+  alt Событие состоялось
+    Volunteer ->> DAOPlatform: Отправляет отчет о отработанных часах
+    DAOPlatform ->> SmartContract: Проверка часов и подтверждение
+    SmartContract -->> DAOPlatform: Завершение подтверждено. Статус: Выполнено
+    DAOPlatform ->> MultiAccount: Запросить выдачу жетона Благо
+    MultiAccount ->> TokenSystem: Выдача жетонов Благо и SBT NFT за отработанное время
+    TokenSystem -->> Volunteer: Получение жетонов Благо и SBT NFT
+    Volunteer ->> Partner: Обмен жетонов Благо на товары или услуги партнеров
+    Partner -->> Volunteer: Оказание услуги или выдача товара
+    Partner ->> MultiAccount: Подтверждает погашение жетона
+  else Проект не завершен
+    Volunteer ->> DAOPlatform: Не удалось завершить проект
+    DAOPlatform -->> Volunteer: Уведомить о возможных вариантах или перенести событие
+  end
+
+```
+
+
 ## Контракт Благо
 |||
 |-|-|
@@ -11,7 +45,7 @@
 |Сборка|```func -o output.fif -SPA jetton-minter.fc workchain.fc stdlib.fc op-codes.fc jetton-utils.fc gas.fc```|
 |Верифицирован|10/09/2024|
 
-## Проверка верицикации
+## Проверка верификации
 Этот исходный код жетона Благо, компилируется в тот же самый байт-код, который находится в сети и проверяется децентрализованной группой валидаторов.
 
 |Состояние|Публичный ключ|IP|Дата верификации|Верификатор|
