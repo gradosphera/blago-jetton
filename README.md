@@ -1,7 +1,9 @@
 # Жетон Благо
 
 ## Архитектура ДАО
+
 Базовая реализация на примере проекта Чистая Лига
+
 ```mermaid
 sequenceDiagram
   actor Volunteer as Волонтер
@@ -33,36 +35,37 @@ sequenceDiagram
 
 ```
 
-
 ## Контракт Благо
-|||
-|-|-|
-|Адрес [jetton_master](https://github.com/ton-blockchain/TEPs/blob/master/text/0074-jettons-standard.md#jetton-master-contract)|[EQBlaryI1HCY6hIlW9giBoqKGtuMHfxlULZOhD6UyzpqLcll](https://tonviewer.com/EQBlaryI1HCY6hIlW9giBoqKGtuMHfxlULZOhD6UyzpqLcll?section=code)|
-|Воркчейн | Основной воркчейн (0) |
-|Хэш код |xQqQAeboQOjJycSPfJylC4hSbUJEtJgwaTwXLpjgmHE= |
-|Кмпилятор|func|
-|Версия|[0.4.4](https://github.com/ton-blockchain/ton/tree/func-0.4.4/crypto/func)|
-|Сборка|```func -o output.fif -SPA jetton-minter.fc workchain.fc stdlib.fc op-codes.fc jetton-utils.fc gas.fc```|
-|Верифицирован|10/09/2024|
+
+|                                                                                                                                |                                                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Адрес [jetton_master](https://github.com/ton-blockchain/TEPs/blob/master/text/0074-jettons-standard.md#jetton-master-contract) | [EQBlaryI1HCY6hIlW9giBoqKGtuMHfxlULZOhD6UyzpqLcll](https://tonviewer.com/EQBlaryI1HCY6hIlW9giBoqKGtuMHfxlULZOhD6UyzpqLcll?section=code) |
+| Воркчейн                                                                                                                       | Основной воркчейн (0)                                                                                                                   |
+| Хэш код                                                                                                                        | xQqQAeboQOjJycSPfJylC4hSbUJEtJgwaTwXLpjgmHE=                                                                                            |
+| Кмпилятор                                                                                                                      | func                                                                                                                                    |
+| Версия                                                                                                                         | [0.4.4](https://github.com/ton-blockchain/ton/tree/func-0.4.4/crypto/func)                                                              |
+| Сборка                                                                                                                         | `func -o output.fif -SPA jetton-minter.fc workchain.fc stdlib.fc op-codes.fc jetton-utils.fc gas.fc`                                    |
+| Верифицирован                                                                                                                  | 10/09/2024                                                                                                                              |
 
 ## Проверка верификации
+
 Этот исходный код жетона Благо, компилируется в тот же самый байт-код, который находится в сети и проверяется децентрализованной группой валидаторов.
 
-|Состояние|Публичный ключ|IP|Дата верификации|Верификатор|
-|-|-|-|-|-|
-|✅ Проверен|edaMyPS3LRFd28UVd7qP6YK1Y/JWrW4+hT+ydMO8TRY=|3.3.3.3|10/9/2024|[Proof](https://verifier.ton.org/EQBlaryI1HCY6hIlW9giBoqKGtuMHfxlULZOhD6UyzpqLcll)|
-|✅ Проверен|0fjyUVE88fJa2IgWpNjjz6O9TC8ftFoSwb+DI1HvFM8=|3.3.3.4|10/9/2024 |[Proof](https://verifier.ton.org/EQBlaryI1HCY6hIlW9giBoqKGtuMHfxlULZOhD6UyzpqLcll)|
-|✅ Проверен|1fWcZGowOI0gTHZyTPhTX2s3iBnMSdqsNqJYCWNj0A4=|3.3.3.5|10/9/2024|[Proof](https://verifier.ton.org/EQBlaryI1HCY6hIlW9giBoqKGtuMHfxlULZOhD6UyzpqLcll)|
+| Состояние   | Публичный ключ                               | IP      | Дата верификации | Верификатор                                                                        |
+| ----------- | -------------------------------------------- | ------- | ---------------- | ---------------------------------------------------------------------------------- |
+| ✅ Проверен | edaMyPS3LRFd28UVd7qP6YK1Y/JWrW4+hT+ydMO8TRY= | 3.3.3.3 | 10/9/2024        | [Proof](https://verifier.ton.org/EQBlaryI1HCY6hIlW9giBoqKGtuMHfxlULZOhD6UyzpqLcll) |
+| ✅ Проверен | 0fjyUVE88fJa2IgWpNjjz6O9TC8ftFoSwb+DI1HvFM8= | 3.3.3.4 | 10/9/2024        | [Proof](https://verifier.ton.org/EQBlaryI1HCY6hIlW9giBoqKGtuMHfxlULZOhD6UyzpqLcll) |
+| ✅ Проверен | 1fWcZGowOI0gTHZyTPhTX2s3iBnMSdqsNqJYCWNj0A4= | 3.3.3.5 | 10/9/2024        | [Proof](https://verifier.ton.org/EQBlaryI1HCY6hIlW9giBoqKGtuMHfxlULZOhD6UyzpqLcll) |
 
 ## Метаданные
 
 ```json
 {
-    "name": "Blago",
-    "description": "Этот проект был создан, чтобы позволить пользователям обменивать и получать активы в экосистеме Градосфера за жетон Благо, который не подвержен волатильным колебаниям. Для соответствия нормативным требованиям эмитент токенов ДАО Градосфера имеет дополнительный контроль с помощью мультиподписного кошелка.",
-    "symbol": "BLG",
-    "decimals": "0",
-    "image": "https://raw.githubusercontent.com/gradosphera/blago-jetton/main/assets/logo.png"
+  "name": "Blago",
+  "description": "Этот проект был создан, чтобы позволить пользователям обменивать и получать активы в экосистеме Градосфера за жетон Благо, который не подвержен волатильным колебаниям. Для соответствия нормативным требованиям эмитент токенов ДАО Градосфера имеет дополнительный контроль с помощью мультиподписного кошелка.",
+  "symbol": "BLG",
+  "decimals": "0",
+  "image": "https://raw.githubusercontent.com/gradosphera/blago-jetton/main/assets/logo.png"
 }
 ```
 
@@ -335,10 +338,7 @@ let ORDER_EXECUTE_GAS = computedGeneric(secondApproval.transactions[1]).gasUsed;
 [tests/FeeComputation.spec.ts#L159](https://github.com/ton-blockchain/multisig-contract-v2/blob/0c7eb74064fea6a77c7a29c0a11d357588b2fceb/tests/FeeComputation.spec.ts#L159)
 
 ```javascript
-let MULTISIG_EXECUTE_GAS =
-  actions.length > 1
-    ? 7310n
-    : computedGeneric(secondApproval.transactions[3]).gasUsed;
+let MULTISIG_EXECUTE_GAS = actions.length > 1 ? 7310n : computedGeneric(secondApproval.transactions[3]).gasUsed;
 ```
 
 В то время как на самом деле это требуется только для учета газа до тех пор, пока [contracts/multisig.func#L23](https://github.com/ton-blockchain/multisig-contract-v2/blob/0c7eb74064fea6a77c7a29c0a11d357588b2fceb/contracts/multisig.func#L23)
@@ -373,6 +373,119 @@ let initOrderStateOverhead = multisigToOrderMessageStats.sub(orderBodyStats);
 
 ```
 
+### Математическая модель токенов "Благо" и "Благодарность" в экосистеме учёта времени
+
+В экосистеме ДАО Градосфера вводятся два взаимосвязанных токена для учёта и мотивации участия:
+
+- **Токен "Благодарность" (BLGT)** — отражает индивидуальное количество времени, вложенного каждым участником в добрые дела и общественные инициативы (учёт вкладов во времени).
+- **Токен "Благо" (BLG)** — агрегирует общий вклад сообщества, преобразуя совокупное время и качество внесённого вклада в социальную и экономическую ценность для общества.
+
+#### Обозначения:
+
+- \$ t_i \$ — время вклада участника \$ i \$ (в часах или минутах)
+- \$ w_i \$ — вес вклада участника (учитывает качество, значимость, квалификацию)
+- \$ N \$ — число участников сообщества
+- \$ B_i^{Благодарность} \$ — количество токенов Благодарности, начисленных участнику \$ i \$
+- \$ B^{Благо} \$ — общий объём токенов Благо, отражающий общественный вклад
+- \$ c \$ — коэффициент коррекции общего вклада (социальное влияние, коэффициент БлагоРодства)
+- \$ U \$ — число пользователей (людей, потребляющих пользу от вклада)
+- \$ r \$ — коэффициент БлагоРодства, измеряющий социальный статус и качество вклада
+
+#### 1. Токен "Благодарность" — индивидуальный вклад во времени с корректировкой качества
+
+$$
+B_i^{\text{Благодарность}} = t_i \times w_i
+$$
+
+- Вклад измеряется в отработанных часах, умноженных на качественный вес.
+- \$ w_i \geq 1 \$, например \$ w_i = 1 \$ для базовой активности, \$ w_i > 1 \$ для экспертной, особо значимой деятельности.
+
+#### 2. Токен "Благо" — агрегированный социальный вклад сообщества
+
+Суммируем вклады всех участников с учётом влияния:
+
+$$
+B^{\text{Благо}} = c \times \sum_{i=1}^N B_i^{\text{Благодарность}} = c \times \sum_{i=1}^N (t_i \times w_i)
+$$
+
+Коэффициент \$ c \$ выражается через:
+
+$$
+c = U \times r
+$$
+
+где:
+
+- \$ U \$ — число пользователей, которые получают пользу от совокупного вклада (создаёт сетевой эффект).
+- \$ r \$ — коэффициент БлагоРодства — отражает качество и социальное значение вклада, может определяться через голосования, экспертную оценку или алгоритмы машинного обучения.
+
+#### 3. Расчёт статуса участника через социальный рейтинг
+
+Для индивидуального статуса с учётом общественной пользы:
+
+$$
+S_i = B_i^{\text{Благодарность}} \times U \times r = (t_i \times w_i) \times U \times r
+$$
+
+- \$ S_i \$ — социальный статус участника, аналог социального рейтинга, напрямую связан с его вкладом и влиянием.
+
+### Заключение:
+
+- **Токен "Благодарность"** — это цифровое измерение личного временного вклада каждого участника с поправкой на качество.
+- **Токен "Благо"** — агрегирует качественный вклад сообщества с учётом числа людей, пользующихся этим Благом, что создает системный социально-экономический эффект.
+- Модель способствует стимулированию активного, качественного участия и справедливому учёту вклада в устойчивое общественное благо.
+
+Это обеспечивает прозрачную, честную и мотивирующую структуру вознаграждения в ДАО Градосфера.\#\#\# Математическая модель токенов «Благодарность» и «Благо» в экосистеме учёта времени
+
+В экосистеме ДАО Градосфера введены два взаимосвязанных токена:
+
+- **Токен «Благодарность» (\$ B_i \$)** — отражает индивидуальный временной вклад участника \$ i \$, учитывая качество и значимость его деятельности.
+- **Токен «Благо» (\$ B \$)** — агрегирует общий вклад всех участников, учитывая охват и социальный эффект от созданного общественного блага.
+
+#### 1. Вычисление токена «Благодарность» для участника \$ i \$:
+
+$$
+B_i = t_i \times w_i
+$$
+
+где
+
+\$ t_i \$ — время вклада (часы) участника \$ i \$
+\$ w_i \$ — вес (коэффициент качества вклада)
+
+#### 2. Вычисление общего токена «Благо», характеризующего общественное благо:
+
+$$
+B = c \times \sum_{i=1}^N B_i = c \times \sum_{i=1}^N (t_i \times w_i)
+$$
+
+где
+\$ N \$ — число участников сообщества
+\$ c \$ — коэффициент социального эффекта, рассчитываемый как:
+
+$$
+c = U \times r
+$$
+
+— \$ U \$ — количество пользователей, которые пользуются данным благом
+— \$ r \$ — коэффициент БлагоРодства, отражающий социальный рейтинг/статус вклада
+
+#### 3. Расчёт социального статуса участника с учётом вклада и влияния:
+
+$$
+S_i = B_i \times U \times r = (t_i \times w_i) \times U \times r
+$$
+
+где \$ S_i \$ — социальный статус или рейтинг участника \$ i \$.
+
+### Итог
+
+- «Благодарность» — персональный учёт времени и качества вклада.
+- «Благо» — агрегированное общественное благо с учётом количества людей и качества вклада.
+- Коэффициент БлагоРодства стимулирует ответственное и высококачественное участие, превращая личный вклад в значимый социальный рейтинг.
+
+Эта модель служит основой мотивации и прозрачного расчёта вклада на платформе ДАО Градосфера.
+
 ## Установка зависимостей
 
 `npm install`
@@ -400,3 +513,41 @@ let initOrderStateOverhead = multisigToOrderMessageStats.sub(orderBodyStats);
 - Важно помнить о ситуации, когда конфигурация изменяется в тот момент, когда сообщение переходит из одного кошелька jetton-wallet в другой. Это может привести к тому, что комиссия за газ будет отличаться от текущей цены. Уменьшение комиссий в конфигурации блокчейна не требует дополнительных действий.
 
 - Однако увеличение комиссий в конфигурации блокчейна требует предварительной подготовки. Например, кошельки и сервисы ДАО Градосфера должны начать отправлять Toncoins за газ заранее, исходя из будущих параметров конфигурации.
+
+```mermaid
+graph TB;
+    subgraph Cluster_0["Main"]
+        load_data_inline["load_data"]
+        save_data_impure["save_data"]
+        send_to_jetton_wallet_impure["send_to_jetton_wallet"]
+        recv_internal_impure["recv_internal"]
+        ifnot_regular["ifnot"]
+        is_address_none_regular["is_address_none"]
+        build_content_cell_inline["build_content_cell"]
+        get_jetton_data_method_id["get_jetton_data"]
+        get_wallet_address_method_id["get_wallet_address"]
+        get_next_admin_address_method_id["get_next_admin_address"]
+    end
+
+    recv_internal_impure --> load_data_inline
+    recv_internal_impure -->|"(int total_supply, slice admin_address, slice next_admin_address, cell jetton_wallet_code, cell metadata_uri)"| save_data_impure
+    recv_internal_impure -->|"(slice to_address, cell jetton_wallet_code, int ton_amount, cell master_msg, int need_state_init)"| send_to_jetton_wallet_impure
+    recv_internal_impure -->|"(in_msg_body~load_op() == op::internal_transfer)"| ifnot_regular
+    recv_internal_impure -->|"(response_address)"| is_address_none_regular
+    get_jetton_data_method_id --> load_data_inline
+    get_jetton_data_method_id -->|"(slice metadata_uri)"| build_content_cell_inline
+    get_wallet_address_method_id --> load_data_inline
+    get_next_admin_address_method_id --> load_data_inline
+    classDef cluster0 fill:#fae8ee,stroke:#333,stroke-width:1px;
+    class load_data_inline cluster0;
+    class save_data_impure cluster0;
+    class send_to_jetton_wallet_impure cluster0;
+    class recv_internal_impure cluster0;
+    class ifnot_regular cluster0;
+    class is_address_none_regular cluster0;
+    class build_content_cell_inline cluster0;
+    class get_jetton_data_method_id cluster0;
+    class get_wallet_address_method_id cluster0;
+    class get_next_admin_address_method_id cluster0;
+
+```
